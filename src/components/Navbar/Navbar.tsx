@@ -11,6 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      <title>WorldView</title>
       <Image src={logo} alt="/" />
       <ul>
         <li className="links">
