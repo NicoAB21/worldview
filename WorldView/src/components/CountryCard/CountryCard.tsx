@@ -2,6 +2,7 @@
 import { fetchAll, fetchFrance, fetchCountry } from '@/services/AllCountries/FetchCountries'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import '../CountryCard/CountryCard.css'
 
 const CountryCard = (country) => {
   const [data, setData] = useState(country.country)
@@ -10,9 +11,9 @@ const CountryCard = (country) => {
   return (
     <>
       {data && (
-        <Link href={`/country/${data.ccn3}`}>
+        <Link href={`/country/${data.ccn3}`} className="country-name">
           <img className="flags" src={data.flags.png} />
-          <div>Pays :{data.name.common}</div>
+          <div>{data.name.common}</div>
         </Link>
       )}
     </>

@@ -1,7 +1,7 @@
 'use client'
 import { fetchAll, fetchFrance } from '@/services/AllCountries/FetchCountries'
 import { useEffect, useState } from 'react'
-import CountryCard from '../components/CountryCard'
+import CountryCard from '../components/CountryCard/CountryCard'
 import Navbar from '../components/Navbar/Navbar'
 import Image from 'next/image'
 import '../app/style.css'
@@ -22,16 +22,18 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="all">
+    <div>
       <Navbar />
-      {data &&
-        data.map((country, index) => {
-          return (
-            <div key={country.cca3} className="country-home">
-              <CountryCard country={country} />
-            </div>
-          )
-        })}
+      <div className="basic-grid">
+        {data &&
+          data.map((country, index) => {
+            return (
+              <div key={country.cca3} className="card">
+                <CountryCard country={country} />
+              </div>
+            )
+          })}
+      </div>
     </div>
   )
 }

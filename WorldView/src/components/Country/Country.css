@@ -1,0 +1,13 @@
+.all {
+  text-align: center;
+  background-color: rgb(19, 19, 19);
+  color: white;
+  margin-bottom: 20px;
+}
+
+body {
+  margin: 0px;
+  text-align: center;
+  background-color: rgb(19, 19, 19);
+  color: white;
+}

@@ -1,0 +1,29 @@
+.flags {
+  height: 160px;
+  width: 250px;
+}
+
+.country-name {
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.country-name:link {
+  text-decoration: none;
+  color: white;
+}
+
+.country-name:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.country-name:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.country-name:active {
+  text-decoration: underline;
+  color: white;
+}

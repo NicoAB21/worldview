@@ -1,4 +1,7 @@
+import { AxiosError } from 'axios'
 import { api } from '../API'
+import axios from 'axios'
+import { log } from 'console'
 
 export const fetchAll = async () => {
   return await api.get('/all/')
@@ -13,5 +16,10 @@ export const fetchCountry = async (code) => {
 }
 
 export const fetchCountryName = async (name) => {
-  return await api.get('/name/' + name).then((response) => response.data)
+  try {
+    const res = await api.get('/name/' + name).then((response) => response.data)
+    return res
+  } catch (error) {
+    return []
+  }
 }

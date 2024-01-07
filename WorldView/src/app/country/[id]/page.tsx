@@ -1,7 +1,7 @@
 'use client'
 import { fetchCountry } from '@/services/AllCountries/FetchCountries'
 import { useEffect, useState } from 'react'
-import Country from '../../../components/Country'
+import Country from '../../../components/Country/Country'
 import type { AppProps } from 'next/app'
 import Navbar from '../../../components/Navbar/Navbar'
 
