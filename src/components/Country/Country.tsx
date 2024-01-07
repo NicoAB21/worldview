@@ -2,9 +2,9 @@
 import { fetchAll, fetchFrance, fetchCountry } from '@/services/AllCountries/FetchCountries'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import '../Country/Country.css'
+import './Country.css'
 
-const Country = (country) => {
+const Country = (country: any) => {
   const [data, setData] = useState(country.country)
   const nativenames = []
   for (const key in data.name.nativeName) {
@@ -17,10 +17,10 @@ const Country = (country) => {
     officialnames += ' / ' + names.official
   })
   let borders = ''
-  let isborders = false
+  let isborders: boolean = false
   {
     data.borders &&
-      data.borders.map((names, index) => {
+      data.borders.map((names: any, index: any) => {
         if (index === data.borders.length - 1) {
           borders += names
         } else {
@@ -30,7 +30,7 @@ const Country = (country) => {
       })
   }
 
-  let currencies = []
+  let currencies: any[] = []
   for (const key in data.currencies) {
     currencies.push(data.currencies[key])
   }
@@ -50,12 +50,12 @@ const Country = (country) => {
   }
 
   let gentiles = []
-  let gentiles_lang = []
+  let gentiles_lang: any[] = []
   for (const key in data.demonyms) {
     gentiles_lang.push(key)
     gentiles.push(data.demonyms[key])
   }
-  let all_demonym = []
+  let all_demonym: any[] = []
   gentiles.map((names, index) => {
     all_demonym.push(
       gentiles_lang[index].toUpperCase() + ':' + ' Female: ' + names.f + ' / ' + ' Male: ' + names.m + ' '
@@ -82,7 +82,7 @@ const Country = (country) => {
           <div>Latitude: {data.latlng[0]}°</div>
           <div>Longitude: {data.latlng[1]}°</div>
           <div>Area: {data.area} km²</div>
-          {isborders === true ? <div>Borders: {borders}</div> : <div>Borders: None</div>}
+          {isborders ? <div>Borders: {borders}</div> : <div>Borders: None</div>}
           <div>Region: {data.region}</div>
           <div>Subegion: {data.subregion}</div>
 

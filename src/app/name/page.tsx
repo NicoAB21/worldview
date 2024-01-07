@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar/Navbar'
-import '../name/Name.css'
+import './Name.css'
 export default function PageName() {
   return (
     <div>

@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react'
 import CountryCard from '../components/CountryCard/CountryCard'
 import Navbar from '../components/Navbar/Navbar'
 import Image from 'next/image'
-import '../app/style.css'
+import './style.css'
 
 export default function Home() {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState<any[]>([])
 
   useEffect(() => {
     fetchAll().then((response) => {
       setData(
-        response.data.sort(function compare(a, b) {
+        response.data.sort(function compare(a: any, b: any) {
           if (a.name.common < b.name.common) return -1
           if (a.name.common > b.name.common) return 1
           return 0
@@ -26,7 +26,7 @@ export default function Home() {
       <Navbar />
       <div className="basic-grid">
         {data &&
-          data.map((country, index) => {
+          data.map((country: any) => {
             return (
               <div key={country.cca3} className="card">
                 <CountryCard country={country} />

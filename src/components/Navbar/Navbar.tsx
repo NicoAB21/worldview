@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../app/image/worldview2.png'
-import '../Navbar/Navbar.css'
+import './Navbar.css'
 
 const Navbar = () => {
   const [name, setName] = useState('')
 
   return (
-    <nav class="navbar">
+    <nav className="navbar">
       <Image src={logo} alt="/" />
       <ul>
         <li className="links">

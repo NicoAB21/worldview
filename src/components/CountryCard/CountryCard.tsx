@@ -2,9 +2,9 @@
 import { fetchAll, fetchFrance, fetchCountry } from '@/services/AllCountries/FetchCountries'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import '../CountryCard/CountryCard.css'
+import './CountryCard.css'
 
-const CountryCard = (country) => {
+const CountryCard = (country: any) => {
   const [data, setData] = useState(country.country)
   console.log(data)
 
